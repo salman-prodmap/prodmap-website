@@ -104,7 +104,8 @@ window.SITE = {
   /* ---------- Contact ---------- */
   contactSection: {
     title: 'Ready to navigate your product journey? Contact us for a free consultation!',
-    form: {   // the form opens the visitor's email app with the message filled in (no server)
+    form: {   // on: false = hidden (Salman 2026-10-10: email only for now; bring back with Formspree, see DECISIONS.md)
+      on: false,
       name: 'Your name', email: 'Your email', company: 'Company (optional)', message: 'Tell us about your product',
       submit: 'Send message',
       subject: 'Free consultation request',

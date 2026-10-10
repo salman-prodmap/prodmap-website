@@ -87,7 +87,7 @@
   </section>
 
   <section id="contact" class="section dark">
-    <div class="wrap contact-grid">
+    <div class="wrap contact-grid${C.form.on ? '' : ' no-form'}">
       <div>
         ${eyebrow('contact')}
         <h2>${esc(C.title)}</h2>
@@ -96,14 +96,14 @@
           <a href="mailto:${esc(S.contact.email)}">${esc(S.contact.email)}</a>
         </div>
       </div>
-      <form class="form" novalidate>
+      ${C.form.on ? `<form class="form" novalidate>
         <label><span>${esc(C.form.name)}</span><input name="name" required autocomplete="name"></label>
         <label><span>${esc(C.form.email)}</span><input name="email" type="email" required autocomplete="email"></label>
         <label><span>${esc(C.form.company)}</span><input name="company" autocomplete="organization"></label>
         <label><span>${esc(C.form.message)}</span><textarea name="message" rows="5" required></textarea></label>
         <button class="btn btn-accent" type="submit">${esc(C.form.submit)} →</button>
         <p class="note">${esc(C.form.note)}</p>
-      </form>
+      </form>` : ''}
     </div>
   </section>`;
 
@@ -114,7 +114,7 @@
 
   // contact form → visitor's email app
   const form = document.querySelector('.form');
-  form.addEventListener('submit', e => {
+  if (form) form.addEventListener('submit', e => {
     e.preventDefault();
     if (!form.reportValidity()) return;
     const f = Object.fromEntries(new FormData(form));

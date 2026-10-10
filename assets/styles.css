@@ -101,6 +101,9 @@ h1{font-size:clamp(34px,5vw,56px);font-weight:600;max-width:15ch}
 .dark .wp{color:var(--accent);border-color:rgba(255,255,255,.2)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .dark h2{margin-bottom:32px}
+.contact-grid.no-form{grid-template-columns:1fr}
+.no-form h2{max-width:22ch}
+.no-form .info a{font-size:22px}
 .info-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fb0cf;margin-bottom:6px}
 .info a{color:#fff;font-size:18px;font-weight:500;text-decoration:none;border-bottom:2px solid var(--accent)}
 .form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:28px;display:grid;gap:16px}
